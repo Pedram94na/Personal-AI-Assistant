@@ -1,0 +1,17 @@
+footer {
+    background-color: #222060;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: rgb(124, 124, 124);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: rgb(214, 220, 45);
+    font-size: 10px;
+    margin: 5px 10%;
+}

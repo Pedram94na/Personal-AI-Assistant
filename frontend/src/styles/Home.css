@@ -1,0 +1,49 @@
+.content {
+  margin-top: 10px;
+}
+
+input {
+  background-color: #f1f1f1;
+  width: 98%;
+  height: 30px;
+  text-indent: 5px;
+  border-radius: 10px;
+  border-style: outset;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  align-items: center;
+}
+
+button {
+  width: 150px;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #363395;
+  color: white;
+  border-style: ridge;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #222060;
+  color: rgb(214, 220, 45);
+  width: 200px;
+}
+
+button:disabled {
+  background-color: #33333f;
+  transition: none;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  width: 150px;
+}
