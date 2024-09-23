@@ -6,7 +6,7 @@ export const handleSendMessage = async (input, setMessages, messages, setInput, 
     setInput("");
     
     try {
-        const response = await fetch("http://localhost:3300/chat", {
+        const response = await fetch("http://localhost:3300/chatRouter", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

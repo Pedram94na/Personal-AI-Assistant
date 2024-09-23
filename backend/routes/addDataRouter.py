@@ -13,7 +13,7 @@ def train():
     '''
 
     userMssg = request.json.get('message')
-    print(request)
+    
     if not userMssg:
         return jsonifyData("error", "No message provided"), 400
 

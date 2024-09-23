@@ -4,7 +4,6 @@ from utils.json import jsonifyData
 from controllers.aiController import generateResponse
 
 chatBP = Blueprint('chat', __name__)
-    
 
 @chatBP.route('/chatRouter', methods=['POST'])
 def chat():

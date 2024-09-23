@@ -16,34 +16,34 @@ const Assistance = () => {
         <div>
             <Header />
 
-                <div className="chatroom">
-                    <div className="messages">
-                        {messages.map((msg, index) => (
-                            <div key={index} className="message">
-                                {
-                                    msg.startsWith("You: ") ?
-                                    (<span className="you-label">You:</span>) :
-                                    (<span className="bot-label">Bot: </span>)
-                                }
-                                {msg.substring(4)}
-                            </div>
-                        ))}
+            <div className="chatroom">
+                <div className="messages">
+                    {messages.map((msg, index) => (
+                        <div key={index} className="message">
+                            {
+                                msg.startsWith("You: ") ?
+                                (<span className="you-label">You:</span>) :
+                                (<span className="bot-label">Bot: </span>)
+                            }
+                            {msg.substring(4)}
+                        </div>
+                    ))}
 
-                        <div ref={message} />
-                    </div>
-                    
-                    <div className="input-area">
-                        <input 
-                            className="inputChat"
-                            type="text" 
-                            value={input} 
-                            onChange={(e) => setInput(e.target.value)} 
-                            placeholder="Type your message..." 
-                        />
-                        
-                        <button className="send" onClick={() => handleSendMessage(input, setMessages, messages, setInput, message)}>Send</button>
-                    </div>
+                    <div ref={message} />
                 </div>
+                
+                <div className="input-area">
+                    <input 
+                        className="inputChat"
+                        type="text" 
+                        value={input} 
+                        onChange={(e) => setInput(e.target.value)} 
+                        placeholder="Type your message..." 
+                    />
+                    
+                    <button className="submit" onClick={() => handleSendMessage(input, setMessages, messages, setInput, message)}>Send</button>
+                </div>
+            </div>
 
             <Footer />
         </div>
