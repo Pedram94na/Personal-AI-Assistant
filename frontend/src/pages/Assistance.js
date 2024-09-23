@@ -20,7 +20,12 @@ const Assistance = () => {
                     <div className="messages">
                         {messages.map((msg, index) => (
                             <div key={index} className="message">
-                                <span className="you-label">You:</span> {msg.substring(4)}
+                                {
+                                    msg.startsWith("You: ") ?
+                                    (<span className="you-label">You:</span>) :
+                                    (<span className="bot-label">Bot: </span>)
+                                }
+                                {msg.substring(4)}
                             </div>
                         ))}
 
