@@ -1,5 +1,5 @@
 # Personal-AI-Assistant
-A small application that I made for my own personal use where I can fine-tune the AI model for my own work.
+A small application where I integrated a LLM into the application by fine-tuning it. My goal is to learn LLM fine-tuning for personal use.
 
 # How To Start The Program
 
