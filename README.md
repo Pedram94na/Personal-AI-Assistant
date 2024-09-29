@@ -8,6 +8,7 @@ Before anything, you'll need to generate a DialoGPT API for yourself and put tha
 https://huggingface.co/
 
 Then you'll need to run the backend and the frontend separately
+
 cd .\frontend\
 
 npm start
@@ -18,6 +19,7 @@ cd .\backend\
 py app.py
 
 # Frontend Package Requirements
+
 cd .\frontend\ 
 
 npm install react-router-dom
