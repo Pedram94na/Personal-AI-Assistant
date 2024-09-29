@@ -3,7 +3,11 @@ A small application where I integrated a LLM into the application by fine-tuning
 
 # How To Start The Program
 
-You'll need to run the backend and the frontend separately
+Before anything, you'll need to generate a DialoGPT API for yourself and put that API in an .env file with key 'HUGGINGFACE_TOKEN'
+
+https://huggingface.co/
+
+Then you'll need to run the backend and the frontend separately
 cd .\frontend\
 
 npm start
