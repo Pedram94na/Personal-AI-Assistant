@@ -1,5 +1,5 @@
 # Personal-AI-Assistant
-A small application where I integrated a LLM into the application by fine-tuning it. My goal is to learn LLM fine-tuning with Python and React for frontend development.
+A small application where I integrated a LLM into the application by fine-tuning it. My goal was to learn LLM fine-tuning with Python and React for frontend development.
 
 # How To Start The Program
 
