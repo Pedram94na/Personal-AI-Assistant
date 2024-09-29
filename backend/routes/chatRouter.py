@@ -1,16 +1,16 @@
 from flask import Blueprint, request
 
 from utils.json import jsonifyData
-from controllers.aiController import generateResponse
+from controller.aiController import generateResponse
 
 chatBP = Blueprint('chat', __name__)
 
 @chatBP.route('/chatRouter', methods=['POST'])
 def chat():
     """
-        Receives a user's message from client,
-        generates a response
-        and returns it.
+    Receives a user's message from client,
+    generates a response
+    and returns it as response.
     """
     
     userMssg = request.json.get('message')

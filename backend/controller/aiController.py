@@ -1,43 +1,50 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer, AdamW, get_linear_schedule_with_warmup
-
 import torch
 
-from utils.env import getEnVariable, pathExists
+from utils.env import pathExists, getEnVariable
 
 saveDir = "./trainedModel"
 
-modelName = "microsoft/dialoGPT-small" #"microsoft/dialoGPT-large"
-tokenizer = AutoTokenizer.from_pretrained(modelName, token=getEnVariable("HUGGINGFACE_TOKEN"))
-
+modelName = "microsoft/dialoGPT-small"
+tokenizer = AutoTokenizer.from_pretrained(modelName, token=getEnVariable('HUGGINGFACE_TOKEN'))
 model = (
     AutoModelForCausalLM.from_pretrained(saveDir)
     if pathExists(saveDir)
 
-    else AutoModelForCausalLM.from_pretrained(
-        modelName, token=getEnVariable("HUGGINGFACE_TOKEN")
-    )
+    else AutoModelForCausalLM.from_pretrained(modelName, token=getEnVariable('HUGGINGFACE_TOKEN'))
 )
 
+if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
 
 def generateResponse(userMssg):
     """
-        Generates a response based on user's message.
+    Generates a response based on a user's message.
 
-        :param userMssg: User's message.
-        :returns: A generated response.
+    :param userMssg: User's message.
+    :returns: A generated response.
     """
     
-    inputIds = tokenizer.encode(userMssg, return_tensors='pt')
-    output = model.generate(inputIds, max_length=100, num_return_sequences=1)
+    inputs = tokenizer(userMssg, return_tensors='pt', padding=True, truncation=True)
+    
+    pad_token_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
+
+    output = model.generate(
+        inputs['input_ids'], 
+        attention_mask=inputs['attention_mask'],
+        max_length=100, 
+        num_return_sequences=1,
+        pad_token_id=pad_token_id
+    )
 
     return tokenizer.decode(output[0], skip_special_tokens=True)
 
 def train(file, epochs=5):
     """
-        Trains the model with the data from the provided text file.
+    Trains the model with the data from the provided text file.
 
-        :param file: The text file containing training data.
-        :param epochs: The number of training epochs.
+    :param file: The text file containing training data.
+    :param epochs: The number of training epochs.
     """
     
     text_data = file.read().decode('utf-8')

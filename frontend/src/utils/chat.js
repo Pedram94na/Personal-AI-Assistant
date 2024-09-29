@@ -1,6 +1,8 @@
-export const handleSendMessage = async (input, setMessages, messages, setInput, message) => {
+export const handleSendMessage = async (input, setMessages, messages, setInput, message, setButtonState) => {
     if (!input.trim())
         return;
+
+    setButtonState(false);
 
     setMessages([...messages, `You: ${input}`]);
     setInput("");
@@ -24,6 +26,10 @@ export const handleSendMessage = async (input, setMessages, messages, setInput, 
 
     catch (error) {
         console.error("Error fetching response:", error);
+    }
+
+    finally {
+        setButtonState(true);
     }
     
     message.current.scrollIntoView({ behavior: "smooth" });

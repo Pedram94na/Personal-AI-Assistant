@@ -3,21 +3,28 @@ import os
 
 load_dotenv()
 
-def getEnVariable(var):
+def getEnVariable(key):
     """
-        :param var: The environmental variable.
-        :return: Returns the value of the given environmental variable.
+    Takes an environmental variable key and fetches the value from the .env file.
+
+    :param var: The environmental variable key.
+    :return: The value of the given environmental variable.
     """
-    return os.getenv(var)
 
-def getHomeDir():
-    return os.path.expanduser("~")
+    if (not isinstance(key, str)):
+        raise Exception(f"{key} is not of type string!")
+    
+    return os.getenv(key)
 
-def upload(dir, text):
-    return os.path.join(dir, text)
+def pathExists(dir):
+    """
+    Takes a file path and checks if it exists.
 
-def pathExists(folder):
-    return os.path.exists(folder)
+    :param dir: The directory path.
+    :return: true if the path exists.
+    """
 
-def createDir(folder):
-    os.makedirs(folder)
+    if (not isinstance(dir, str)):
+        raise Exception(f"{dir} is not of type string!")
+    
+    return os.path.exists(dir)

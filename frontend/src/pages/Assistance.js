@@ -8,10 +8,11 @@ import { handleSendMessage } from "../utils/chat";
 import '../styles/Assistance.css'
 
 const Assistance = () => {
+    const [buttonState, setButtonState] = useState(true)
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState([]);
     const message = useRef(null);
-
+    
     return (
         <div>
             <Header />
@@ -41,7 +42,7 @@ const Assistance = () => {
                         placeholder="Type your message..." 
                     />
                     
-                    <button className="submit" onClick={() => handleSendMessage(input, setMessages, messages, setInput, message)}>Send</button>
+                    <button disabled={!buttonState} className="submit" onClick={() => handleSendMessage(input, setMessages, messages, setInput, message, setButtonState)}>Send</button>
                 </div>
             </div>
 

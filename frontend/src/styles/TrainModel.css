@@ -1,16 +1,40 @@
+h3 {
+    color: white;
+}
 .fileUpload {
-    background-color: rgb(56, 56, 56);
+    background-color: rgb(34, 53, 84);
     display: flex;
     flex-direction: column;
     height: 70vh;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
-    margin: 20px;
+    color: white;
+}
+
+div.file {
+    flex: flex;
+    flex-direction: row;
+}
+
+div.epoch {
+    display: flex;
+    flex-direction: row;
+}
+
+input {
+    margin: 10px 5px;
 }
 
 .fileInput {
     background: none;
+    border-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.epochInput {
+    width: 10%;
     border-style: none;
     display: flex;
     justify-content: space-between;
