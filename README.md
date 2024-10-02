@@ -25,7 +25,12 @@ py app.py
 cd .\frontend\ 
 
 ```bash
-npm install react-router-dom styled-components axios formik eslint prettier eslint-plugin-react eslint-config-prettier react-icons
+npm install react-router-dom
+npm install styled-components
+npm install axios
+npm install formik
+npm install eslint prettier eslint-plugin-react eslint-config-prettier
+npm install react-icons
 ```
 
 # Backend Package Requirements
@@ -33,5 +38,11 @@ npm install react-router-dom styled-components axios formik eslint prettier esli
 cd .\backend\
 
 ```bash
-pip install transformers torch flask pandas requests python-dotenv flask-cors
+pip install transformers
+pip install torch
+pip install flask
+pip install pandas
+pip install requests
+pip install python-dotenv
+pip install flask-cors
 ```
