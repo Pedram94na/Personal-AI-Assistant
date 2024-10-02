@@ -11,18 +11,28 @@ https://huggingface.co/
 
 Then you'll need to run the backend and the frontend separately
 
+```bash
 cd .\frontend\
+```
 
+```bash
 npm start
+```
 
 ---------------------
+```bash
 cd .\backend\
+```
 
+```bash
 py app.py
+```
 
 # Frontend Package Requirements
 
-cd .\frontend\ 
+```bash
+cd .\frontend\
+```
 
 ```bash
 npm install react-router-dom
@@ -35,7 +45,9 @@ npm install react-icons
 
 # Backend Package Requirements
 
+```bash
 cd .\backend\
+```
 
 ```bash
 pip install transformers
